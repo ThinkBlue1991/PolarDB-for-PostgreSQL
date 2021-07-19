@@ -4,7 +4,7 @@ echo "This script configure and build the code, It takes an optional"
 echo "parameter that must be one of the following:"
 echo "   deploy:   (default) configure the build with performance"
 echo "             optimization options and build."
-echo "   verify:   configure the build with performance optimzation"
+echo "   verify:   configure the build with performance optimization"
 echo "             with assertion enabled, and then build"
 echo "   debug:    configure the build with debug options and then"
 echo "             build."
@@ -46,6 +46,7 @@ elif [[ "$BLD_OPT" == "debug" ]]; then
     CMD+=(--enable-cassert)
     CMD+=(--with-python)
     CMD+=(--enable-debug)
+#    CMD+=(--enable-tap-tests)
 elif [[ "$BLD_OPT" != "repeat" ]]; then
     echo "Invalid Parameter! Usage: $0 [deploy|verify|debug|repeat]"
     popd
